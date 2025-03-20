@@ -1,51 +1,57 @@
 <!---
 {
-  "depends_on": [],
+  "depends_on": ["printf", "types"],
   "author": "Stephan Bökelmann",
-  "first_used": "2025-03-17",
-  "keywords": ["learning", "exercises", "education", "practice"]
+  "first_used": "2025-03-20",
+  "keywords": ["C", "exercises", "printf", "runtime values", "types"]
 }
 --->
 
-# Learning Through Exercises
+# Printing Runtime Values
 
 ## 1) Introduction
-Learning by doing is one of the most effective methods to acquire new knowledge and skills. Rather than passively consuming information, actively engaging in problem-solving fosters deeper understanding and long-term retention. By working through structured exercises, students can grasp complex concepts in a more intuitive and applicable way. This approach is particularly beneficial in technical fields like programming, mathematics, and engineering.
+
+In the [printf for Constant Strings](https://github.com/STEMgraph/a2596a91-c7de-477a-bfbb-b08867f1aa89?tab=readme-ov-file#printf-for-constant-strings) exercise, we introduced the `printf` function:
+
+```C
+int printf(const char* restrict format, ...);
+```
+
+At that time, we chose to avoid discussing the **ellipsis (`...`)** in detail. Now, let's explore it further. The ellipsis represents a **variadic argument pack**, meaning that `printf` can accept a variable number of additional arguments.
+
+At first, this might seem like a wild idea, but it makes perfect sense when considering the purpose of `printf`. The function name itself hints at its functionality: it consists of **"print"** and **"f"**, where *f* stands for **format**. This means that before a string is sent to `stdout` and displayed by the terminal, `printf` processes the format string and replaces placeholders with runtime values.
+
+This is particularly useful when variables need to be displayed in output. Placeholders are inserted into the format string, and their corresponding values are supplied as additional arguments in the function call. The function then maps these values to the respective placeholders.
+
+### Common Format Specifiers
+
+`printf` supports multiple format specifiers, including:
+
+1. `%s` - String
+2. `%d` - Integer (decimal)
+3. `%f` - Floating point number
+
+For a complete list of format specifiers, refer to the [cppreference documentation](https://en.cppreference.com/w/c/io/fprintf).
 
 ### 1.1) Further Readings and Other Sources
-- [The Importance of Practice in Learning](https://www.sciencedirect.com/science/article/pii/S036013151300062X)
-- "The Art of Learning" by Josh Waitzkin
-- [How to Learn Effectively: 5 Key Strategies](https://www.edutopia.org/article/5-research-backed-learning-strategies)
+
+- [printf on cppreference](https://en.cppreference.com/w/c/io/fprintf)
+- [CodeVault about Format Strings in C](https://youtu.be/rUA3IkQNe5I?si=0tx-oLNQunjUn2fV)
 
 ## 2) Tasks
-1. **Write a Summary**: Summarize the concept of "learning by doing" in 3-5 sentences.
-2. **Example Identification**: List three examples from your own experience where learning through exercises helped you understand a topic better.
-3. **Create an Exercise**: Design a simple exercise for a topic of your choice that someone else could use to practice.
-4. **Follow an Exercise**: Find an online tutorial that includes exercises and complete at least two of them.
-5. **Modify an Existing Exercise**: Take a basic problem from a textbook or online course and modify it to make it slightly more challenging.
-6. **Pair Learning**: Explain a concept to a partner and guide them through an exercise without giving direct answers.
-7. **Review Mistakes**: Look at an exercise you've previously completed incorrectly. Identify why the mistake happened and how to prevent it in the future.
-8. **Time Challenge**: Set a timer for 10 minutes and try to solve as many simple exercises as possible on a given topic.
-9. **Self-Assessment**: Create a checklist to evaluate your own performance in completing exercises effectively.
-10. **Reflect on Progress**: Write a short paragraph on how this structured approach to exercises has influenced your learning.
 
-<details>
-  <summary>Tip for Task 5</summary>
-  Try making small adjustments first, such as increasing the difficulty slightly or adding an extra constraint.
-</details>
+1. **Basic Print Statements**: Write a simple program that uses `printf` to print a greeting message and your name.
+2. **Printing Variables**: Declare an integer, a floating-point number, and a string. Use `printf` to display their values in a formatted output.
+3. **Using Multiple Placeholders**: Create a program that prints a formatted sentence incorporating at least three different format specifiers.
+4. **User Input and Output**: Write a program that asks for the user’s name and age, then prints a formatted message including these values.
+5. **Calculations with Printf**: Declare two integer variables, calculate their sum and product, and display the results using `printf`.
 
 ## 3) Questions
-1. What are the main benefits of learning through exercises compared to passive learning?
-2. How do exercises improve long-term retention?
-3. Can you think of a subject where learning through exercises might be less effective? Why?
-4. What role does feedback play in learning through exercises?
-5. How can self-designed exercises improve understanding?
-6. Why is it beneficial to review past mistakes in exercises?
-7. How does explaining a concept to someone else reinforce your own understanding?
-8. What strategies can you use to stay motivated when practicing with exercises?
-9. How can timed challenges contribute to learning efficiency?
-10. How do exercises help bridge the gap between theory and practical application?
+
+1. Why is the `printf` function called variadic, and what does the ellipsis (`...`) in its prototype signify?
+2. How does `printf` determine which values to replace in the format string?
+3. What are some potential pitfalls of using incorrect format specifiers in `printf`?
 
 ## 4) Advice
-Practice consistently and seek out diverse exercises that challenge different aspects of a topic. Combine exercises with reflection and feedback to maximize your learning efficiency. Don't hesitate to adapt exercises to fit your own needs and ensure that you're actively engaging with the material, rather than just going through the motions.
 
+Practice using `printf` with different data types and formatting options to understand its behavior. Experimenting with incorrect format specifiers can also help you learn common errors and how to debug them. Always refer to documentation for best practices in formatted output handling.
