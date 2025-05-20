@@ -50,8 +50,18 @@ For a complete list of format specifiers, refer to the [cppreference documentati
 ## 3) Questions
 
 1. Why is the `printf` function called variadic, and what does the ellipsis (`...`) in its prototype signify?
+
+The ellipsis is used to set paramater for the printf function.
+
 2. How does `printf` determine which values to replace in the format string?
+
+The order, the values are placed.
+
 3. What are some potential pitfalls of using incorrect format specifiers in `printf`?
+
+Die Werte werden falsch interpretiert und dargestellt, da die Werte im Speicher dann in das Aufgabeformat umgewandelt werden.
+
+
 
 ## 4) Advice
 
